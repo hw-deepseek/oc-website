@@ -92,23 +92,21 @@ html[data-theme="scrapbook"] #ambient::after { background-image:linear-gradient(
 html[data-theme="terminal"] #ambient::after { background:repeating-linear-gradient(0deg,transparent 0 3px,var(--accent) 4px); opacity:.04; }
 html[data-theme="gothic"] #ambient::before { background:none; border:2px solid var(--accent); border-radius:50% 50% 0 0; width:350px; height:650px; opacity:.15; }
 .app { display:grid; grid-template-columns:238px minmax(0,1fr); min-height:100dvh; }
-.sidebar { position:sticky; top:0; height:100dvh; padding:22px 16px; border-right:1px solid var(--line); background:color-mix(in srgb,var(--panel) 92%,transparent); display:flex; flex-direction:column; gap:14px; backdrop-filter:blur(20px); overflow-y:auto; }
-.brand { display:flex; align-items:center; gap:12px; padding:0 9px; cursor:pointer; flex-shrink:0; }
+.sidebar { position:sticky; top:0; height:100dvh; padding:28px 18px; border-right:1px solid var(--line); background:color-mix(in srgb,var(--panel) 85%,transparent); display:flex; flex-direction:column; gap:21px; backdrop-filter:blur(20px); overflow-y:auto; }
+.brand { display:flex; align-items:center; gap:12px; padding:0 9px; cursor:pointer; }
 .brandmark { font-size:29px; color:var(--accent); animation:float 6s ease-in-out infinite; }
-.brand strong { display:block; font-size:17px; letter-spacing:2px; }
+.brand strong { display:block; font-size:18px; letter-spacing:2px; }
 .brand small { font-size:9px; letter-spacing:3px; }
-.side-block { padding:12px; background:var(--panel2); border:1px solid var(--line); border-radius:12px; flex-shrink:0; }
-.side-block > label { margin-bottom:8px; font-size:11px; letter-spacing:1px; text-transform:uppercase; }
-.side-block select { padding:5px 0; border:none; background:transparent; font-weight:600; }
-.side-block .row { gap:6px; }
-nav { display:flex; flex-direction:column; gap:4px; flex-shrink:0; }
-.navitem { border:none; background:transparent; text-align:left; padding:10px 13px; border-radius:10px; color:var(--muted); transition:all .2s; font-size:13px; }
+.workspace { padding:12px; background:var(--panel2); border:1px solid var(--line); border-radius:12px; }
+.workspace select { padding:5px 0; border:none; background:transparent; }
+nav { display:flex; flex-direction:column; gap:6px; }
+.navitem { border:none; background:transparent; text-align:left; padding:12px 14px; border-radius:12px; color:var(--muted); transition:all .2s; }
 .navitem:hover { background:var(--panel2); transform:translateX(3px); color:var(--text); }
 .navitem.active { background:var(--accent); color:var(--onaccent); font-weight:700; }
-.navicon { display:inline-block; width:24px; text-align:center; }
-.sidebar-foot { margin-top:auto; font-size:11px; padding:10px 4px 4px; color:var(--muted); border-top:1px solid var(--line); flex-shrink:0; }
-main { min-width:0; padding:0 32px 65px; max-width:1640px; width:100%; margin:auto; }
-.topbar { height:78px; display:flex; justify-content:space-between; align-items:center; gap:10px; border-bottom:1px solid var(--line); margin-bottom:26px; }
+.navicon { display:inline-block; width:29px; }
+.sidebar-foot { margin-top:auto; font-size:11px; padding:10px; color:var(--muted); }
+main { min-width:0; padding:0 36px 65px; max-width:1640px; width:100%; margin:auto; }
+.topbar { height:85px; display:flex; justify-content:space-between; align-items:center; gap:10px; border-bottom:1px solid var(--line); margin-bottom:30px; }
 .breadcrumb { color:var(--muted); font-size:12px; letter-spacing:1px; }
 .top-actions,.row { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .spread { justify-content:space-between; }
@@ -121,79 +119,57 @@ main { min-width:0; padding:0 32px 65px; max-width:1640px; width:100%; margin:au
 .icon-btn { padding:7px 11px; min-width:36px; }
 .page { animation:pageIn .38s both; }
 .eyebrow { color:var(--accent); font-size:11px; font-weight:700; letter-spacing:3px; margin-bottom:12px; text-transform:uppercase; }
-.pagehead { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:22px; }
+.pagehead { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:25px; }
 .pagehead p { color:var(--muted); max-width:650px; margin-bottom:0; }
-.grid { display:grid; gap:16px; }
+.grid { display:grid; gap:18px; }
 .cols2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
 .cols3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .cols4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
-.split { display:grid; grid-template-columns:minmax(260px,.85fr) minmax(340px,1.15fr); gap:18px; align-items:start; }
-.card { background:color-mix(in srgb,var(--panel) 94%,transparent); border:1px solid var(--line); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); min-width:0; }
+.split { display:grid; grid-template-columns:minmax(260px,.85fr) minmax(340px,1.15fr); gap:22px; align-items:start; }
+.card { background:color-mix(in srgb,var(--panel) 94%,transparent); border:1px solid var(--line); border-radius:var(--radius); padding:23px; box-shadow:var(--shadow); min-width:0; }
 .card.interactive { transition:transform .25s,border-color .2s; cursor:pointer; }
 .card.interactive:hover { transform:translateY(-5px); border-color:var(--accent); }
 .card.stagger { animation:pageIn .4s both; animation-delay:calc(var(--i,0) * 45ms); }
-.field { margin-bottom:15px; }
+.field { margin-bottom:17px; }
 .field:last-child { margin-bottom:0; }
 .badge { display:inline-flex; align-items:center; gap:5px; font-size:11px; padding:3px 9px; border:1px solid var(--line); color:var(--accent); border-radius:100px; }
 .stat strong { display:block; font-size:34px; color:var(--accent); font-family:var(--display); }
 .stat span { color:var(--muted); font-size:12px; }
-.hero { position:relative; overflow:hidden; padding:32px; margin-bottom:20px; min-height:220px; }
+.hero { position:relative; overflow:hidden; padding:35px; margin-bottom:22px; min-height:235px; }
 .hero::after { content:"*"; position:absolute; right:20px; top:-65px; font-size:320px; line-height:1; color:var(--accent); opacity:.075; animation:spin 80s linear infinite; pointer-events:none; }
 .hero p { max-width:650px; color:var(--muted); }
-.empty { text-align:center; padding:40px 20px; color:var(--muted); border:1px dashed var(--line); border-radius:var(--radius); }
+.empty { text-align:center; padding:45px 20px; color:var(--muted); border:1px dashed var(--line); border-radius:var(--radius); }
 .empty b { display:block; color:var(--text); margin-bottom:8px; }
-.avatar { width:42px; height:42px; border:1px solid var(--line); background:var(--panel2); border-radius:13px; display:grid; place-items:center; font-family:var(--display); font-size:19px; color:var(--accent); flex-shrink:0; }
+.avatar { width:44px; height:44px; border:1px solid var(--line); background:var(--panel2); border-radius:14px; display:grid; place-items:center; font-family:var(--display); font-size:20px; color:var(--accent); flex-shrink:0; }
 .avatar img { width:100%; height:100%; object-fit:cover; border-radius:inherit; }
-.character-cover { min-height:78px; display:flex; align-items:center; gap:14px; margin-bottom:16px; }
-.character-cover .avatar { width:58px; height:58px; font-size:27px; }
+.character-cover { min-height:78px; display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+.character-cover .avatar { width:60px; height:60px; font-size:29px; }
 .clamp { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; color:var(--muted); white-space:pre-wrap; }
-.tagbar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.tagbar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px; }
 .tagbar button.active { background:var(--accent); color:var(--onaccent); border-color:var(--accent); }
-
-/* 折叠面板通用 */
-details.panel { border:1px solid var(--line); border-radius:14px; background:color-mix(in srgb,var(--panel) 96%,transparent); box-shadow:var(--shadow); overflow:hidden; }
-details.panel > summary { cursor:pointer; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; gap:12px; list-style:none; font-weight:700; font-size:14px; }
-details.panel > summary::-webkit-details-marker { display:none; }
-details.panel > summary::after { content:"▾"; color:var(--muted); font-size:12px; transition:transform .2s; }
-details.panel[open] > summary::after { transform:rotate(180deg); }
-details.panel > summary:hover { background:color-mix(in srgb,var(--accent) 6%,transparent); }
-details.panel .panel-body { padding:0 18px 18px; }
-.panel-sub { color:var(--muted); font-size:11px; font-weight:400; }
-
-/* 世界观页 */
-.world-layout { display:grid; grid-template-columns:minmax(260px,.85fr) minmax(340px,1.15fr); gap:18px; align-items:start; }
-.world-layout .world-chat { display:flex; flex-direction:column; }
-.world-layout .chatlog { height:460px; }
-
-/* 故事书桌 */
-.doc-toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:16px; }
-.doc-layout { display:grid; grid-template-columns:260px minmax(0,1fr); gap:18px; align-items:start; }
-.doc-list-panel { position:sticky; top:20px; max-height:calc(100dvh - 120px); display:flex; flex-direction:column; }
-.doc-list { overflow:auto; padding-right:4px; flex:1; }
-.doc-item { display:block; width:100%; text-align:left; border:1px solid var(--line); background:var(--panel); padding:12px 14px; border-radius:10px; margin-bottom:8px; font-size:13px; }
+.doc-layout { display:grid; grid-template-columns:250px minmax(0,1fr); gap:20px; }
+.doc-list { max-height:75vh; overflow:auto; }
+.doc-item { display:block; width:100%; text-align:left; border:1px solid var(--line); background:var(--panel); padding:14px; border-radius:12px; margin-bottom:9px; }
 .doc-item.active { border-color:var(--accent); background:var(--panel2); }
-.doc-item b { display:block; margin-bottom:4px; }
-.editor { min-height:380px; font-size:15px; }
-
-/* 房间 */
-.room-layout { display:grid; grid-template-columns:300px minmax(0,1fr); gap:18px; align-items:start; }
-.room-side { position:sticky; top:20px; max-height:calc(100dvh - 100px); overflow-y:auto; padding-right:4px; }
-.actor { padding:11px 12px; border:1px solid var(--line); border-radius:11px; margin-bottom:9px; background:var(--panel2); }
+.editor { min-height:410px; font-size:15px; }
+.chatlog { height:440px; overflow:auto; padding:5px 5px 15px; scroll-behavior:smooth; }
+.message { margin:0 0 17px; animation:bubbleIn .3s both; }
+.message.user { margin-left:11%; }
+.message.assistant { margin-right:5%; }
+.message-head { font-size:11px; color:var(--muted); margin-bottom:5px; display:flex; align-items:center; gap:8px; }
+.bubble { background:var(--panel2); border:1px solid var(--line); padding:13px 16px; border-radius:15px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.user .bubble { background:color-mix(in srgb,var(--accent) 10%,var(--panel)); border-color:color-mix(in srgb,var(--accent) 40%,var(--line)); }
+.composer { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; align-items:end; margin-top:12px; }
+.composer textarea { min-height:80px; max-height:220px; }
+.room-layout { display:grid; grid-template-columns:270px minmax(0,1fr); gap:20px; align-items:start; }
+.actor { padding:12px; border:1px solid var(--line); border-radius:12px; margin-bottom:10px; background:var(--panel2); }
 .actor.disabled { opacity:.5; }
-.actor-head { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:4px; }
-.actor-meta { font-size:11px; color:var(--muted); margin-bottom:8px; }
-.actor-actions { display:flex; gap:6px; flex-wrap:wrap; }
-.room-main { display:flex; flex-direction:column; gap:14px; min-width:0; }
-.room-stage { display:flex; flex-direction:column; }
-.room-stage-head { display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
-.room-speak-bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
-.room-speak-bar select { max-width:220px; }
-.room-log { height:480px; overflow:auto; padding:12px 4px; scroll-behavior:smooth; border:1px solid var(--line); border-radius:12px; background:color-mix(in srgb,var(--panel2) 60%,transparent); }
-.room-message { display:flex; gap:10px; margin-bottom:20px; align-items:flex-start; animation:bubbleIn .35s both; padding:0 8px; }
+.room-log { height:540px; overflow:auto; padding:15px 4px; scroll-behavior:smooth; }
+.room-message { display:flex; gap:10px; margin-bottom:23px; align-items:flex-start; animation:bubbleIn .35s both; }
 .room-message.right { flex-direction:row-reverse; }
 .room-message .message-body { max-width:85%; min-width:0; }
 .room-message.right .message-head { justify-content:flex-end; }
-.room-message.narrator { display:block; margin:20px 6%; }
+.room-message.narrator { display:block; margin:25px 8%; }
 .room-message.narrator .message-body { max-width:100%; }
 .room-message.narrator .bubble { border-style:dashed; background:transparent; font-family:var(--display); color:var(--muted); }
 .room-message.narrator .message-head { justify-content:center; }
@@ -202,30 +178,16 @@ details.panel .panel-body { padding:0 18px 18px; }
 .message-tools button:hover { color:var(--accent); }
 .room-message.left .bubble { background:color-mix(in srgb, var(--accent2) 12%, var(--panel2)); border-color:color-mix(in srgb, var(--accent2) 30%, var(--line)); }
 .room-message.right .bubble { background:color-mix(in srgb, var(--accent) 12%, var(--panel2)); border-color:color-mix(in srgb, var(--accent) 30%, var(--line)); }
-.room-composer { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:10px; align-items:end; }
-.room-composer textarea { min-height:70px; max-height:180px; }
-.room-tools { display:flex; gap:8px; flex-wrap:wrap; }
-
-/* API 折叠卡片 */
-.api-card summary { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:14px 16px; cursor:pointer; list-style:none; }
-.api-card summary::-webkit-details-marker { display:none; }
-.api-card summary::after { content:"▾"; color:var(--muted); font-size:12px; transition:transform .2s; }
-.api-card[open] summary::after { transform:rotate(180deg); }
-.api-card .api-body { padding:0 16px 16px; }
-.api-summary-name { font-weight:700; }
-.api-summary-model { color:var(--muted); font-size:12px; margin-left:6px; }
-
-/* 素材 */
-.gallery { width:100%; max-height:320px; object-fit:contain; border-radius:12px; background:var(--panel2); }
-.theme-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
-.theme-tile { text-align:left; position:relative; overflow:hidden; border:1px solid var(--line); border-radius:12px; padding:14px; min-height:104px; background:var(--panel2); transition:all .25s; }
+.gallery { width:100%; max-height:350px; object-fit:contain; border-radius:12px; background:var(--panel2); }
+.theme-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.theme-tile { text-align:left; position:relative; overflow:hidden; border:1px solid var(--line); border-radius:12px; padding:16px; min-height:112px; background:var(--panel2); transition:all .25s; }
 .theme-tile:hover { transform:translateY(-4px); }
 .theme-tile.active { outline:2px solid var(--accent); outline-offset:2px; }
-.theme-symbol { font-size:26px; line-height:1; display:block; margin-bottom:8px; color:var(--swatch); }
+.theme-symbol { font-size:30px; line-height:1; display:block; margin-bottom:10px; color:var(--swatch); }
 .theme-tile small { display:block; font-size:10px; }
-.dropzone { border:1px dashed var(--accent); border-radius:var(--radius); padding:24px; text-align:center; background:color-mix(in srgb,var(--accent) 4%,transparent); margin-bottom:20px; cursor:pointer; transition:.2s; }
+.dropzone { border:1px dashed var(--accent); border-radius:var(--radius); padding:28px; text-align:center; background:color-mix(in srgb,var(--accent) 4%,transparent); margin-bottom:24px; cursor:pointer; transition:.2s; }
 .dropzone.drag { background:color-mix(in srgb,var(--accent) 17%,transparent); transform:scale(1.01); }
-.notice { font-size:12px; color:var(--muted); border-left:2px solid var(--accent); padding:8px 13px; background:var(--panel2); border-radius:0 8px 8px 0; margin:12px 0; }
+.notice { font-size:12px; color:var(--muted); border-left:2px solid var(--accent); padding:8px 13px; background:var(--panel2); border-radius:0 8px 8px 0; margin:14px 0; }
 .key-status { font-size:11px; color:var(--accent); }
 .mobile-menu { display:none; }
 #busybar { display:none; position:fixed; bottom:22px; left:50%; transform:translateX(-50%); z-index:90; align-items:center; gap:12px; background:var(--panel); border:1px solid var(--accent); padding:12px 18px; border-radius:100px; box-shadow:var(--shadow); max-width:92vw; }
@@ -236,10 +198,11 @@ details.panel .panel-body { padding:0 18px 18px; }
 dialog { color:var(--text); background:var(--panel); border:1px solid var(--line); border-radius:20px; width:min(760px,94vw); max-height:88dvh; padding:0; box-shadow:0 30px 160px #0008; }
 dialog::backdrop { background:#070b15aa; backdrop-filter:blur(8px); }
 dialog[open] { animation:dialogIn .25s both; }
-.modal-head { padding:20px 22px 12px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+.modal-head { padding:22px 25px 14px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
 .modal-head h2 { margin:0; }
-.modal-content { padding:20px 22px; max-height:65dvh; overflow:auto; }
-.modal-foot { padding:14px 22px; border-top:1px solid var(--line); display:flex; gap:10px; justify-content:flex-end; }
+.modal-content { padding:23px 25px; max-height:65dvh; overflow:auto; }
+.modal-foot { padding:15px 25px; border-top:1px solid var(--line); display:flex; gap:10px; justify-content:flex-end; }
+.plan-row { padding:15px 0; border-bottom:1px solid var(--line); }
 #transition { position:fixed; inset:0; pointer-events:none; z-index:300; display:none; place-items:center; overflow:hidden; }
 #transition.show { display:grid; }
 #transition .veil { position:absolute; inset:0; background:var(--bg); animation:veil .95s both; }
@@ -248,11 +211,11 @@ dialog[open] { animation:dialogIn .25s both; }
 #transition.cyber .veil,#transition.terminal .veil { animation:scanWipe .95s both; }
 #transition.ocean .veil,#transition.ink .veil { animation:inkWipe 1s both; }
 #transition.bauhaus .sigil,#transition.editorial .sigil { animation:geometry .95s both; }
-.guide-art { height:140px; display:flex; align-items:center; justify-content:center; gap:22px; }
-.guide-art span { font-size:46px; color:var(--accent); animation:float 2.8s ease-in-out infinite; }
-.guide-art span:nth-child(2) { animation-delay:.3s; font-size:62px; }
+.guide-art { height:150px; display:flex; align-items:center; justify-content:center; gap:22px; }
+.guide-art span { font-size:48px; color:var(--accent); animation:float 2.8s ease-in-out infinite; }
+.guide-art span:nth-child(2) { animation-delay:.3s; font-size:65px; }
 .guide-art span:nth-child(3) { animation-delay:.6s; }
-.dots { display:flex; gap:8px; justify-content:center; margin:18px; }
+.dots { display:flex; gap:8px; justify-content:center; margin:20px; }
 .dots i { width:7px; height:7px; border-radius:50%; background:var(--line); }
 .dots i.active { background:var(--accent); width:25px; border-radius:8px; }
 html[data-theme="editorial"] h1 { font-size:clamp(35px,5vw,65px); }
@@ -278,36 +241,33 @@ html[data-theme="gothic"] .hero p { margin-left:auto; margin-right:auto; }
 @media(min-width:1500px) { main { padding-left:55px; padding-right:55px; } }
 @media(max-width:1150px) {
   .app { grid-template-columns:205px minmax(0,1fr); }
-  main { padding:0 20px 65px; }
+  main { padding:0 22px 65px; }
   .split { grid-template-columns:1fr; }
   .cols3 { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .room-layout { grid-template-columns:260px minmax(0,1fr); }
+  .room-layout { grid-template-columns:225px minmax(0,1fr); }
   .cols4 { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media(max-width:780px) {
   .app { display:block; }
-  .sidebar { position:fixed; width:270px; left:0; top:0; z-index:100; transform:translateX(-105%); transition:transform .25s; background:var(--panel); }
+  .sidebar { position:fixed; width:265px; left:0; top:0; z-index:100; transform:translateX(-105%); transition:transform .25s; background:var(--panel); }
   .sidebar.open { transform:translateX(0); box-shadow:30px 0 100px #0008; }
-  main { padding:0 14px 80px; }
+  main { padding:0 16px 80px; }
   .mobile-menu { display:inline-block; }
-  .topbar { height:66px; margin-bottom:20px; }
+  .topbar { height:70px; margin-bottom:24px; }
   .breadcrumb { display:none; }
-  .pagehead { flex-direction:column; gap:12px; }
-  .cols2,.cols3,.room-layout,.doc-layout,.world-layout { grid-template-columns:1fr; }
+  .pagehead { flex-direction:column; gap:13px; }
+  .cols2,.cols3,.room-layout,.doc-layout { grid-template-columns:1fr; }
   .theme-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .card { padding:16px; }
-  .hero { padding:22px; }
-  .doc-list-panel,.room-side { position:static; max-height:none; }
-  .doc-list { max-height:260px; }
-  .room-log { height:55dvh; min-height:300px; }
-  .world-layout .chatlog { height:45dvh; }
+  .card { padding:18px; }
+  .hero { padding:25px; }
+  .doc-list { max-height:210px; }
+  .room-log { height:55dvh; min-height:320px; }
+  .chatlog { height:45dvh; }
   .room-message .message-body { max-width:83%; }
-  .room-message .avatar { width:32px; height:32px; font-size:14px; border-radius:10px; }
+  .room-message .avatar { width:33px; height:33px; font-size:15px; border-radius:10px; }
   .room-message.narrator { margin-left:2%; margin-right:2%; }
   .top-actions { gap:6px; }
   .top-actions .btn { padding:7px 10px; font-size:12px; }
-  .room-composer { grid-template-columns:1fr; }
-  .room-composer .btn { width:100%; }
 }
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; scroll-behavior:auto!important; }
@@ -608,14 +568,12 @@ function renderSidebar() {
   const p=project();
   $("#sidebar").innerHTML=`
     <div class="brand" data-action="nav" data-id="home"><span class="brandmark">*</span><div><strong>${esc(state.settings.title)}</strong><small>OC CREATION STUDIO</small></div></div>
-    <div class="side-block"><label>当前宇宙</label><select id="projectSelect">${options(state.projects.map(p=>[p.id,p.name]),p.id)}</select>
+    <div class="workspace"><label>当前宇宙</label><select id="projectSelect">${options(state.projects.map(p=>[p.id,p.name]),p.id)}</select>
       <div class="row" style="margin-top:8px"><button class="btn small" data-action="newProject">＋ 新建</button><button class="btn small" data-action="renameProject">重命名</button></div>
       <div class="row" style="margin-top:6px"><button class="btn small danger" data-action="deleteProject" style="flex:1">删除本宇宙</button></div>
     </div>
     <nav>${NAV.map(([id,icon])=>`<button class="navitem ${view===id?"active":""}" data-action="nav" data-id="${id}"><span class="navicon">${icon}</span>${esc(label(id))}</button>`).join("")}</nav>
-    <div class="sidebar-foot">把一个念头，写成一个宇宙。<br>LOCAL FIRST · HUMAN + AI
-      <div style="margin-top:10px"><button class="btn small" data-action="backup" style="width:100%">↓ 导出完整备份</button></div>
-    </div>`;
+    <div class="sidebar-foot">把一个念头，写成一个宇宙。<br>LOCAL FIRST · HUMAN + AI<hr><button class="btn small" data-action="backup">↓ 导出完整备份</button></div>`;
   $("#crumb").textContent=p.name+" / "+label(view);
 }
 function render() {
@@ -628,6 +586,19 @@ function render() {
 }
 function refresh(p) { if(project().id===p.id) render(); }
 
+/* ---------- 打字机工具 ---------- */
+function typewriter(el, fullText, speed=16) {
+  if (el._twTimer) { clearInterval(el._twTimer); el._twTimer = null; }
+  el.textContent = "";
+  let i = 0;
+  el._twTimer = setInterval(() => {
+    if (i >= fullText.length) { clearInterval(el._twTimer); el._twTimer = null; return; }
+    const step = Math.max(1, Math.ceil(fullText.length / 200));
+    i = Math.min(fullText.length, i + step);
+    el.textContent = fullText.slice(0, i);
+  }, speed);
+}
+
 /* ---------- 总览 ---------- */
 function renderHome() {
   const p=project();
@@ -638,7 +609,7 @@ function renderHome() {
       <p>${esc(cut(p.world.summary,230)||"一座没有名字的城，一个不肯服从命运的人，或者一句还没有说出口的告白。先写下它，剩下的可以一起构建。")}</p>
       <div class="row"><span class="badge">${esc(p.world.genre||"类型尚未定义")}</span><span class="badge">${esc(THEMES.find(t=>t[0]===state.settings.theme)?.[1])}</span><span class="badge">所有设定均可修改</span></div>
     </div>
-    <div class="grid cols4" style="margin-bottom:20px">${[
+    <div class="grid cols4" style="margin-bottom:24px">${[
       ["characters",p.characters.length,"角色档案"],["documents",p.documents.length,"剧情与分支"],["library",p.assets.length,"创作素材"],["room",p.rooms.length,"剧情房间"]
     ].map(([v,n,t],i)=>`<div class="card stat interactive stagger" style="--i:${i}" data-action="nav" data-id="${v}"><strong>${n.toString().padStart(2,"0")}</strong><span>${t} ↗</span></div>`).join("")}</div>
     <div class="grid cols2">
@@ -653,49 +624,35 @@ function renderHome() {
     </div>`;
 }
 
-/* ---------- 世界观 ---------- */
+/* ---------- 世界观聊天与整理方案 ---------- */
 function renderWorld() {
   const p=project(),w=p.world;
   return head("world","Worldbuilding atelier","左侧是随时可改的设定，右侧是你的共创伙伴。确认整理方案后，自动创建人物与故事。",
     `<button class="btn primary" data-action="plan">生成整理方案</button>`)+`
-    <div class="world-layout">
-      <details class="panel" open>
-        <summary>世界设定 <span class="panel-sub">标题 · 类型 · 规则</span></summary>
-        <div class="panel-body">
-          ${bound("world.title","世界标题",w.title)}
-          ${bound("world.genre","类型 / 关键词",w.genre,"input",'placeholder="例如：赛博、仿生人、革命、群像"')}
-          ${bound("world.summary","世界观梗概",w.summary,"textarea",'class="large" placeholder="地理、时代、社会结构与核心矛盾…"')}
-          ${bound("world.rules","世界规则 / 不可违背的设定",w.rules,"textarea")}
-          ${bound("world.tone","叙事气质",w.tone)}
-          <div class="notice">自动外观使用世界观关键词匹配，可在设置中关闭。修改设定后，下一次 AI 请求会读取新内容。</div>
-        </div>
-      </details>
-      <div class="world-chat">
-        <details class="panel" open>
-          <summary>世界观共创 <span class="panel-sub">${p.chat.length} 条对话</span></summary>
-          <div class="panel-body">
-            <div class="row spread" style="margin-bottom:8px">
-              <span class="muted" style="font-size:12px">与 AI 讨论、追问、确认设定</span>
-              <button class="btn small" data-action="clearChat">清空对话</button>
-            </div>
-            <div class="chatlog" id="worldLog">${p.chat.length?p.chat.map((m,i)=>`
-              <div class="message ${m.role}" data-msg-idx="${i}"><div class="message-head">${m.role==="user"?"你":"共创助手"}</div><div class="bubble" id="worldBubble-${i}">${esc(m.content)}</div></div>`
-            ).join(""):empty("从一个画面、一种情绪开始","例如：我想写一个仿生人拥有灵魂、但不能继承记忆的世界。先帮我搭建核心冲突。")}</div>
-            <div class="composer">
-              <textarea data-bind="draft" id="worldDraft" placeholder="聊世界、角色、主线，或让 AI 提供构思与知识参考…">${esc(p.draft)}</textarea>
-              <button class="btn primary" data-action="worldSend">发送 ↗</button>
-            </div>
-            <div class="row" style="margin-top:10px">
-              <button class="btn small" data-action="promptWorld" data-id="从零开始，先问我三个最重要的问题，帮我构建世界观。">从零开始</button>
-              <button class="btn small" data-action="promptWorld" data-id="检查当前世界观的逻辑漏洞，提出具体补充建议。">检查逻辑</button>
-              <button class="btn small" data-action="promptWorld" data-id="基于现有世界观，提出三个动机冲突鲜明的角色和一条主线。">构思人物</button>
-              <button class="btn small" data-action="uploadWorldFile">从本地上传设定文件</button>
-            </div>
-            ${p.pendingPlan?`<div class="notice">有一份尚未应用的整理方案。<button class="btn small" data-action="reviewPlan">预览方案</button></div>`:""}
-          </div>
-        </details>
+    <div class="split"><div class="card">
+      ${bound("world.title","世界标题",w.title)}
+      ${bound("world.genre","类型 / 关键词",w.genre,"input",'placeholder="例如：赛博、仿生人、革命、群像"')}
+      ${bound("world.summary","世界观梗概",w.summary,"textarea",'class="large" placeholder="地理、时代、社会结构与核心矛盾…"')}
+      ${bound("world.rules","世界规则 / 不可违背的设定",w.rules,"textarea")}
+      ${bound("world.tone","叙事气质",w.tone)}
+      <div class="notice">自动外观使用世界观关键词匹配，可在设置中关闭。修改设定后，下一次 AI 请求会读取新内容。</div>
+    </div><div class="card">
+      <div class="row spread"><h2>世界观共创</h2><button class="btn small" data-action="clearChat">清空对话</button></div>
+      <div class="chatlog" id="worldLog">${p.chat.length?p.chat.map((m,i)=>`
+        <div class="message ${m.role}" data-msg-idx="${i}"><div class="message-head">${m.role==="user"?"你":"共创助手"}</div><div class="bubble" id="worldBubble-${i}">${esc(m.content)}</div></div>`
+      ).join(""):empty("从一个画面、一种情绪开始","例如：我想写一个仿生人拥有灵魂、但不能继承记忆的世界。先帮我搭建核心冲突。")}</div>
+      <div class="composer">
+        <textarea data-bind="draft" id="worldDraft" placeholder="聊世界、角色、主线，或让 AI 提供构思与知识参考…">${esc(p.draft)}</textarea>
+        <button class="btn primary" data-action="worldSend">发送 ↗</button>
       </div>
-    </div>`;
+      <div class="row" style="margin-top:12px">
+        <button class="btn small" data-action="promptWorld" data-id="从零开始，先问我三个最重要的问题，帮我构建世界观。">从零开始</button>
+        <button class="btn small" data-action="promptWorld" data-id="检查当前世界观的逻辑漏洞，提出具体补充建议。">检查逻辑</button>
+        <button class="btn small" data-action="promptWorld" data-id="基于现有世界观，提出三个动机冲突鲜明的角色和一条主线。">构思人物</button>
+        <button class="btn small" data-action="uploadWorldFile">从本地上传设定文件</button>
+      </div>
+      ${p.pendingPlan?`<div class="notice">有一份尚未应用的整理方案。<button class="btn small" data-action="reviewPlan">预览方案</button></div>`:""}
+    </div></div>`;
 }
 async function sendWorld() {
   const p=project();
@@ -756,7 +713,7 @@ function reviewPlan(p=project()) {
   openModal("确认创作档案",`
     <div class="notice">应用后更新世界观；同名角色合并更新；剧情文档新增保留旧稿。可以先修改下面的 JSON。应用前会下载一份当前备份。</div>
     <p>角色 <b>${plan.characters.length}</b> 名 · 剧情 <b>${plan.documents.length}</b> 篇</p>
-    ${field("plan","整理方案（可编辑）",JSON.stringify(plan,null,2),"textarea",'class="large" style="font-family:monospace;font-size:12px;min-height:360px"')}`,
+    ${field("plan","整理方案（可编辑）",JSON.stringify(plan,null,2),"textarea",'class="large" style="font-family:monospace;font-size:12px;min-height:390px"')}`,
     fd=>{
       const value=validatePlan(JSON.parse(fd.get("plan")));
       backup();
@@ -781,7 +738,7 @@ function renderCharacters() {
         <div class="character-cover">${avatar(c)}<div><h3>${esc(c.name)}</h3><span class="badge">${esc(c.role||"身份待定")}</span></div></div>
         <p class="clamp">${esc(c.personality||"还没有填写性格")}</p>
         <small>目标 / ${esc(cut(c.goals,75)||"待定")}</small>
-        <div class="row" style="margin-top:16px"><button class="btn small primary" data-action="editCharacter" data-id="${esc(c.id)}">编辑档案</button><button class="btn small" data-action="portrait" data-id="${esc(c.id)}">生成人像</button><button class="btn small danger" data-action="deleteCharacter" data-id="${esc(c.id)}">删除</button></div>
+        <div class="row" style="margin-top:18px"><button class="btn small primary" data-action="editCharacter" data-id="${esc(c.id)}">编辑档案</button><button class="btn small" data-action="portrait" data-id="${esc(c.id)}">生成人像</button><button class="btn small danger" data-action="deleteCharacter" data-id="${esc(c.id)}">删除</button></div>
       </article>`).join("")}</div>`:empty("谁会成为这个世界的第一位居民？","手动创建，或在世界观共创中让 AI 批量构思。"));
 }
 function editCharacter(id="") {
@@ -802,31 +759,24 @@ function editCharacter(id="") {
     });
 }
 
-/* ---------- 故事书桌 ---------- */
+/* ---------- 文档与分支 ---------- */
 function renderDocuments() {
   const p=project(),list=p.documents.filter(d=>docFilter==="全部"||d.type===docFilter);
   let d=p.documents.find(d=>d.id===docId);
   if(!d||!list.includes(d)) { d=list[0]; docId=d?.id||""; }
   return head("documents","Story desk","正文、主线、番外与 IF 分支分开保存。AI 续写先预览，再决定是否追加。",
     `<button class="btn primary" data-action="newDoc">＋ 新建文档</button>`)+`
-    <div class="doc-toolbar">${["全部",...TYPES].map(t=>`<button class="btn small ${docFilter===t?"active":""}" data-action="docFilter" data-id="${t}">${t}</button>`).join("")}</div>
-    <div class="doc-layout">
-      <details class="panel doc-list-panel" open>
-        <summary>文档列表 <span class="panel-sub">${list.length} 篇</span></summary>
-        <div class="panel-body doc-list">
-          ${list.map(x=>`<button class="doc-item ${x.id===docId?"active":""}" data-action="selectDoc" data-id="${esc(x.id)}"><b>${esc(x.title)}</b><small class="muted">${esc(x.type)} · ${x.content.length} 字</small></button>`).join("")||empty("暂无文档","创建一篇新故事")}
-        </div>
-      </details>
-      <div>${d?`<div class="card">
-        <div class="grid cols2">${bound("doc.title","文档标题",d.title)}<div class="field"><label>分类</label><select data-bind="doc.type">${options(TYPES,d.type)}</select></div></div>
-        ${d.parentId?`<div class="notice">IF 分支来源：${esc(p.documents.find(x=>x.id===d.parentId)?.title||"来源文档已移除")}</div>`:""}
-        <textarea class="editor" data-bind="doc.content" placeholder="故事从这里开始…">${esc(d.content)}</textarea>
-        <div class="row spread" style="margin-top:12px"><span class="muted" id="wordCount">${d.content.length} 字</span><div class="row"><button class="btn small" data-action="exportDoc">↓ 导出 TXT</button><button class="btn small" data-action="branchDoc">⑂ 创建 IF 分支</button><button class="btn small danger" data-action="deleteDoc">删除</button></div></div>
-        <hr>
-        <label>AI 写作指令</label><textarea id="writeInstruction" placeholder="例如：延续最后一段，以第三人称限知视角，写一场压抑的重逢。"></textarea>
-        <div class="row" style="margin-top:10px"><button class="btn primary" data-action="writeDoc">续写故事</button><button class="btn" data-action="checkDoc">检查逻辑与人物一致性</button></div>
-      </div>`:empty("为这一页起一个名字","可创建主线、番外、IF线、章节或灵感笔记。")}</div>
-    </div>`;
+    <div class="tagbar">${["全部",...TYPES].map(t=>`<button class="btn small ${docFilter===t?"active":""}" data-action="docFilter" data-id="${t}">${t}</button>`).join("")}</div>
+    <div class="doc-layout"><div class="doc-list">${list.map(x=>`<button class="doc-item ${x.id===docId?"active":""}" data-action="selectDoc" data-id="${esc(x.id)}"><b>${esc(x.title)}</b><br><small>${esc(x.type)} · ${x.content.length} 字</small></button>`).join("")||empty("暂无文档","创建一篇新故事")}</div>
+    <div>${d?`<div class="card">
+      <div class="grid cols2">${bound("doc.title","文档标题",d.title)}<div class="field"><label>分类</label><select data-bind="doc.type">${options(TYPES,d.type)}</select></div></div>
+      ${d.parentId?`<div class="notice">IF 分支来源：${esc(p.documents.find(x=>x.id===d.parentId)?.title||"来源文档已移除")}</div>`:""}
+      <textarea class="editor" data-bind="doc.content" placeholder="故事从这里开始…">${esc(d.content)}</textarea>
+      <div class="row spread" style="margin-top:14px"><span class="muted" id="wordCount">${d.content.length} 字</span><div class="row"><button class="btn small" data-action="exportDoc">↓ 导出 TXT</button><button class="btn small" data-action="branchDoc">⑂ 创建 IF 分支</button><button class="btn small danger" data-action="deleteDoc">删除</button></div></div>
+      <hr>
+      <label>AI 写作指令</label><textarea id="writeInstruction" placeholder="例如：延续最后一段，以第三人称限知视角，写一场压抑的重逢。"></textarea>
+      <div class="row" style="margin-top:12px"><button class="btn primary" data-action="writeDoc">续写故事</button><button class="btn" data-action="checkDoc">检查逻辑与人物一致性</button></div>
+    </div>`:empty("为这一页起一个名字","可创建主线、番外、IF线、章节或灵感笔记。")}</div></div>`;
 }
 function newDoc() {
   const p=project();
@@ -860,14 +810,14 @@ function renderLibrary() {
   const p=project(),q=libraryFilter.toLowerCase(),list=p.assets.filter(a=>[a.title,a.category,a.tags,a.content].join(" ").toLowerCase().includes(q));
   return head("library","Reference library","导入文本与图片，按名称和内容做基础分类。AI 请求会按相关性选取部分素材，不会读取全部长文件。",
     `<button class="btn" data-action="newAsset">＋ 手动素材</button><button class="btn" data-action="knowledge">生成参考资料</button><button class="btn primary" data-action="sortAssets">AI 整理分类</button>`)+`
-    <div class="dropzone" id="dropzone" data-action="libraryImport"><div style="font-size:26px;color:var(--accent)">↥</div><b>拖入你的素材文件</b><br><small>TXT · Markdown · JSON · CSV · HTML · 图片</small><br><button class="btn small" data-action="libraryImport" style="margin-top:12px; pointer-events:none;">点击选择文件导入素材</button></div>
-    <div class="row" style="margin-bottom:18px"><input id="librarySearch" value="${esc(libraryFilter)}" placeholder="搜索标题、分类、标签或正文…" style="flex:1"><button class="btn" data-action="searchLibrary">搜索</button></div>
+    <div class="dropzone" id="dropzone" data-action="libraryImport"><div style="font-size:27px;color:var(--accent)">↥</div><b>拖入你的素材文件</b><br><small>TXT · Markdown · JSON · CSV · HTML · 图片</small><br><button class="btn small" data-action="libraryImport" style="margin-top:12px; pointer-events:none;">点击选择文件导入素材</button></div>
+    <div class="row" style="margin-bottom:20px"><input id="librarySearch" value="${esc(libraryFilter)}" placeholder="搜索标题、分类、标签或正文…" style="flex:1"><button class="btn" data-action="searchLibrary">搜索</button></div>
     <div class="grid cols3">${list.map(a=>`
       <article class="card">
-        ${a.kind==="image"&&safeImage(a.image)?`<img class="gallery" src="${esc(a.image)}" alt="${esc(a.title)}" loading="lazy" style="height:160px;margin-bottom:14px">`:""}
-        <span class="badge">${esc(a.category)}</span><h3 style="margin-top:10px">${esc(a.title)}</h3>
+        ${a.kind==="image"&&safeImage(a.image)?`<img class="gallery" src="${esc(a.image)}" alt="${esc(a.title)}" loading="lazy" style="height:170px;margin-bottom:15px">`:""}
+        <span class="badge">${esc(a.category)}</span><h3 style="margin-top:12px">${esc(a.title)}</h3>
         <p class="clamp">${esc(a.content||"图片参考")}</p><small>${esc(a.tags||"未添加标签")}</small>
-        <div class="row" style="margin-top:14px"><button class="btn small" data-action="editAsset" data-id="${esc(a.id)}">查看 / 编辑</button><button class="btn small" data-action="exportAsset" data-id="${esc(a.id)}">导出文字</button><button class="btn small danger" data-action="deleteAsset" data-id="${esc(a.id)}">删除</button></div>
+        <div class="row" style="margin-top:15px"><button class="btn small" data-action="editAsset" data-id="${esc(a.id)}">查看 / 编辑</button><button class="btn small" data-action="exportAsset" data-id="${esc(a.id)}">导出文字</button><button class="btn small danger" data-action="deleteAsset" data-id="${esc(a.id)}">删除</button></div>
       </article>`).join("")}</div>${!list.length?empty("暂无匹配素材","试试导入文件或创建自己的参考条目。"):""}`;
 }
 function editAsset(id="") {
@@ -1018,11 +968,6 @@ async function processWorldFileImport(files) {
 function actorName(p,a) { return a.narrator?a.name:(p.characters.find(c=>c.id===a.characterId)?.name||a.name); }
 function enabledActors(r) { return r.actors.filter(a=>a.enabled); }
 function nextActor(r) { const actors=enabledActors(r); return actors.length?actors[r.cursor%actors.length]:null; }
-function fixCursor(r) {
-  const actors = enabledActors(r);
-  if (!actors.length) { r.cursor = 0; return; }
-  if (r.cursor < 0 || r.cursor >= actors.length) r.cursor = r.cursor % actors.length;
-}
 function renderRoom() {
   const p=project(),r=room();
   const title=head("room","An ensemble of possible futures","轮流发言的多角色舞台：AI 自主决定本角色行动，系统按演员顺序调度。遇到真人席位时自动暂停。",
@@ -1031,80 +976,49 @@ function renderRoom() {
   const next=nextActor(r),humans=enabledActors(r).filter(a=>a.human);
   const aiActors = enabledActors(r).filter(a => !a.human && !a.narrator);
   return title+`
-    <div class="row" style="margin-bottom:16px"><select id="roomSelect" style="flex:1;max-width:340px">${options(p.rooms.map(x=>[x.id,x.name]),r.id)}</select><button class="btn" data-action="roomSettings">房间设定</button><button class="btn" data-action="exportRoom">↓ 全部文本</button><button class="btn" data-action="copyRoom">复制全文</button><button class="btn" data-action="roomToDoc">保存为剧情</button></div>
-    <div class="room-layout">
-      <div class="room-side">
-        <details class="panel" open>
-          <summary>演员与旁白 <span class="panel-sub">${r.actors.length} 位</span></summary>
-          <div class="panel-body">
-            <p class="muted" style="font-size:11px;margin-bottom:10px">从上到下轮流发言 · 下一位：${esc(next?actorName(p,next):"未设置")}</p>
-            ${r.actors.map((a,i)=>`
-            <div class="actor ${!a.enabled?"disabled":""}">
-              <div class="actor-head"><b>${esc(actorName(p,a))}</b><span class="badge">${a.human?"真人":a.narrator?"旁白":"AI"}</span></div>
-              <div class="actor-meta">${a.side==="right"?"右侧":"左侧"} · ${esc(state.settings.profiles.find(x=>x.id===(a.profile||r.profile))?.name||"默认接口")}</div>
-              <div class="actor-actions">
-                <button class="btn small" data-action="editActor" data-id="${esc(a.id)}">设置</button>
-                <button class="btn small" data-action="moveActor" data-id="${esc(a.id)}" ${i===0?"disabled":""}>↑</button>
-                <button class="btn small" data-action="toggleActor" data-id="${esc(a.id)}">${a.enabled?"停用":"启用"}</button>
-              </div>
-            </div>`).join("")||empty("空舞台","点击下方 ＋ 添加角色或旁白")}
-            <button class="btn small" data-action="addActor" style="width:100%;margin-top:4px">＋ 添加演员 / 旁白</button>
-          </div>
-        </details>
-        <details class="panel" open style="margin-top:14px">
-          <summary>推演参数 <span class="panel-sub">条数 · 字数</span></summary>
-          <div class="panel-body">
-            <label>本轮最多生成条数（1–30）</label><input type="number" min="1" max="30" data-bind="room.limit" value="${r.limit}">
-            <div class="row" style="margin-top:10px">
-              <div class="field" style="flex:1;"><label>单段最少字数</label><input type="number" min="1" max="2000" data-bind="room.minWords" value="${r.minWords||120}"></div>
-              <div class="field" style="flex:1;"><label>单段最多字数</label><input type="number" min="50" max="5000" data-bind="room.maxWords" value="${r.maxWords||350}"></div>
-            </div>
-            <div class="row" style="margin-top:8px"><button class="btn primary" data-action="autoRoom" style="flex:1">▶ 连续推演</button><button class="btn" data-action="stepRoom" style="flex:1">单步</button></div>
-            <div class="notice">连续推演会逐条调用 API，产生相应费用。遇到真人或达到上限会停下；可随时点击底部停止。</div>
-          </div>
-        </details>
+    <div class="row" style="margin-bottom:20px"><select id="roomSelect" style="flex:1;max-width:340px">${options(p.rooms.map(x=>[x.id,x.name]),r.id)}</select><button class="btn" data-action="roomSettings">房间设定</button><button class="btn" data-action="exportRoom">↓ 全部文本</button><button class="btn" data-action="copyRoom">复制全文</button><button class="btn" data-action="roomToDoc">保存为剧情</button></div>
+    <div class="room-layout"><div class="card">
+      <div class="row spread"><h3>演员与旁白</h3><button class="btn small" data-action="addActor">＋</button></div>
+      <p class="muted" style="font-size:11px">从上到下轮流发言 · 下一位：${esc(next?actorName(p,next):"未设置")}</p>
+      ${r.actors.map((a,i)=>`
+      <div class="actor ${!a.enabled?"disabled":""}">
+        <div class="row spread"><b>${esc(actorName(p,a))}</b><span class="badge">${a.human?"真人":a.narrator?"旁白":"AI"}</span></div>
+        <small>${a.side==="right"?"右侧":"左侧"} · ${esc(state.settings.profiles.find(x=>x.id===(a.profile||r.profile))?.name||"默认接口")}</small>
+        <div class="row" style="margin-top:9px"><button class="btn small" data-action="editActor" data-id="${esc(a.id)}">设置</button><button class="btn small" data-action="moveActor" data-id="${esc(a.id)}" ${i===0?"disabled":""}>↑</button><button class="btn small" data-action="toggleActor" data-id="${esc(a.id)}">${a.enabled?"停用":"启用"}</button></div>
+      </div>`).join("")||empty("空舞台","点击 ＋ 添加角色或旁白")}
+      <hr><label>本轮最多生成条数（1–30）</label><input type="number" min="1" max="30" data-bind="room.limit" value="${r.limit}">
+      <div class="row" style="margin-top:10px">
+        <div class="field" style="flex:1;"><label>单段最少字数</label><input type="number" min="1" max="2000" data-bind="room.minWords" value="${r.minWords||120}"></div>
+        <div class="field" style="flex:1;"><label>单段最多字数</label><input type="number" min="50" max="5000" data-bind="room.maxWords" value="${r.maxWords||350}"></div>
       </div>
-      <div class="room-main">
-        <div class="card room-stage">
-          <div class="room-stage-head">
-            <div><h2 style="margin-bottom:2px">${esc(r.name)}</h2><small class="muted">${esc(cut(r.scene,90)||"还没有设置开场场景")}</small></div>
-            <span class="badge">${r.messages.length} 条记录</span>
-          </div>
-          ${aiActors.length ? `
-          <div class="room-speak-bar">
-            <select id="speakActorSelect">
-              ${options(aiActors.map(a=>[a.id, actorName(p,a)]), aiActors[0]?.id)}
-            </select>
-            <button class="btn small primary" data-action="forceSpeak">让 TA 发言</button>
-          </div>` : ""}
-          <div class="room-log" id="roomLog">${r.messages.length?r.messages.map((m,i)=>{
-            const a=r.actors.find(a=>a.id===m.actorId),c=p.characters.find(c=>c.id===a?.characterId);
-            return `<div class="room-message ${m.side} ${m.narrator?"narrator":""}" data-msg-idx="${i}">
-              ${m.narrator?"":avatar(c||{name:m.name})}<div class="message-body"><div class="message-head"><b>${esc(m.name)}</b><span>${esc(stamp(m.time))}</span></div>
-              <div class="bubble" id="roomBubble-${i}">${esc(m.content)}${m.image&&safeImage(m.image)?`<img class="gallery" src="${esc(m.image)}" alt="房间生成图片" style="display:block;margin-top:12px">`:""}</div>
-              <div class="message-tools">
-                <button data-action="editMessage" data-id="${esc(m.id)}">编辑</button>
-                <button data-action="regenMessage" data-id="${esc(m.id)}">重新生成</button>
-                <button data-action="deleteMessage" data-id="${esc(m.id)}">删除</button>
-              </div></div>
-            </div>`;
-          }).join(""):empty("故事尚未开始","写下开场，或点击单步让第一个 AI 角色进入场景。")}</div>
-        </div>
-        <div class="card">
-          <label>人工参与 / 导演消息</label>
-          <select id="humanActor" style="margin-bottom:8px">${options([["director","导演 · 场外指令"],...humans.map(a=>[a.id,actorName(p,a)])],next?.human?next.id:"director")}</select>
-          <div class="room-composer">
-            <textarea data-bind="room.humanDraft" placeholder="输入角色台词、动作，或导演对下一幕的要求…">${esc(r.humanDraft)}</textarea>
-            <button class="btn primary" data-action="humanSend">发送</button>
-          </div>
-          <div class="room-tools" style="margin-top:10px">
-            <button class="btn small" data-action="sceneImage">生成场景图</button>
-            <button class="btn small" data-action="roomSummary">提炼剧情记忆</button>
-            <button class="btn small danger" data-action="clearRoom">清空记录</button>
-          </div>
-        </div>
-      </div>
-    </div>`;
+      <div class="row" style="margin-top:13px"><button class="btn primary" data-action="autoRoom">▶ 连续推演</button><button class="btn" data-action="stepRoom">单步</button></div>
+      <div class="notice">连续推演会逐条调用 API，产生相应费用。遇到真人或达到上限会停下；可随时点击底部停止。</div>
+    </div><div class="card">
+      <div class="row spread"><div><h2 style="margin-bottom:4px">${esc(r.name)}</h2><small>${esc(cut(r.scene,100)||"还没有设置开场场景")}</small></div><span class="badge">${r.messages.length} 条记录</span></div>
+      ${aiActors.length ? `
+      <div class="row" style="margin-bottom:10px">
+        <select id="speakActorSelect" style="max-width:220px">
+          ${options(aiActors.map(a=>[a.id, actorName(p,a)]), aiActors[0]?.id)}
+        </select>
+        <button class="btn small primary" data-action="forceSpeak">让 TA 发言</button>
+      </div>` : ""}
+      <div class="room-log" id="roomLog">${r.messages.length?r.messages.map((m,i)=>{
+        const a=r.actors.find(a=>a.id===m.actorId),c=p.characters.find(c=>c.id===a?.characterId);
+        return `<div class="room-message ${m.side} ${m.narrator?"narrator":""}" data-msg-idx="${i}">
+          ${m.narrator?"":avatar(c||{name:m.name})}<div class="message-body"><div class="message-head"><b>${esc(m.name)}</b><span>${esc(stamp(m.time))}</span></div>
+          <div class="bubble" id="roomBubble-${i}">${esc(m.content)}${m.image&&safeImage(m.image)?`<img class="gallery" src="${esc(m.image)}" alt="房间生成图片" style="display:block;margin-top:12px">`:""}</div>
+          <div class="message-tools">
+            <button data-action="editMessage" data-id="${esc(m.id)}">编辑</button>
+            <button data-action="regenMessage" data-id="${esc(m.id)}">重新生成</button>
+            <button data-action="deleteMessage" data-id="${esc(m.id)}">删除</button>
+          </div></div>
+        </div>`;
+      }).join(""):empty("故事尚未开始","写下开场，或点击单步让第一个 AI 角色进入场景。")}</div>
+      <label>人工参与 / 导演消息</label>
+      <select id="humanActor">${options([["director","导演 · 场外指令"],...humans.map(a=>[a.id,actorName(p,a)])],next?.human?next.id:"director")}</select>
+      <div class="composer"><textarea data-bind="room.humanDraft" placeholder="输入角色台词、动作，或导演对下一幕的要求…">${esc(r.humanDraft)}</textarea><button class="btn primary" data-action="humanSend">发送</button></div>
+      <div class="row" style="margin-top:13px"><button class="btn small" data-action="sceneImage">生成场景图</button><button class="btn small" data-action="roomSummary">提炼剧情记忆</button><button class="btn small danger" data-action="clearRoom">清空记录</button></div>
+    </div></div>`;
 }
 function newRoom() {
   const p=project();
@@ -1153,6 +1067,13 @@ function roomText(r) {
   return `${r.name}\n${"=".repeat(36)}\n场景：${r.scene}\n风格：${r.style}\n\n`+
     r.messages.map((m,i)=>`${String(i+1).padStart(3,"0")}｜${m.name}${m.narrator?" · 旁白":""}\n${m.content}${m.image?"\n[图片已保存在页面/素材库；完整备份包含图片信息]":""}`).join("\n\n"+"—".repeat(24)+"\n\n");
 }
+function fixCursor(r) {
+  const actors = enabledActors(r);
+  if (!actors.length) { r.cursor = 0; return; }
+  if (r.cursor < 0 || r.cursor >= actors.length) r.cursor = r.cursor % actors.length;
+}
+
+/** 核心生成函数：auto=连续，singleActorId=指定某角色发言 */
 async function playRoom(auto = false, singleActorId = "") {
   const p = project(), r = room(); if (!r) return;
   if (!enabledActors(r).length) return toast("请先添加并启用演员");
@@ -1278,7 +1199,10 @@ async function regenMessage(id) {
   if (!a) return toast("找不到该角色的设置");
   if(task) return toast("请先停止当前任务");
   if (!confirm("重新生成将会覆盖此消息及其之后的所有内容，确定继续？")) return;
+
+  // 删除该条及之后所有消息
   r.messages = r.messages.slice(0, idx);
+  // 重置 cursor 到该条对应的位置
   const enabled = enabledActors(r);
   const pos = enabled.findIndex(x => x.id === a.id);
   r.cursor = pos >= 0 ? pos : 0;
@@ -1478,12 +1402,12 @@ function renderSettings() {
         <p class="muted">密钥会保存在本设备的浏览器中（localStorage），下次打开自动填充。⚠️ 如果你把网站分享给别人，请注意密钥安全。</p>
         <div class="api-list">
           ${s.profiles.map((p, i) => `
-            <details class="panel api-card" style="background:var(--panel2); margin-bottom:12px;" ${i===0?"open":""}>
-              <summary>
-                <span><span class="api-summary-name">${esc(p.name)}</span><span class="api-summary-model">${esc(p.model||"未设置模型")}</span></span>
+            <details class="card api-card" style="background:var(--panel2); margin-bottom:12px; padding:0;" ${i===0?"open":""}>
+              <summary style="cursor:pointer; padding:14px 16px; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                <span><b>${esc(p.name)}</b> <small class="muted">${esc(p.model||"未设置模型")}</small></span>
                 <span class="badge">${s.defaultProfile===p.id?"默认":""}</span>
               </summary>
-              <div class="api-body">
+              <div style="padding:0 16px 16px;">
                 <div class="field"><label>接口名称</label><input data-bind="profile.name" data-id="${esc(p.id)}" value="${esc(p.name)}"></div>
                 <div class="field"><label>Base URL</label><input data-bind="profile.base" data-id="${esc(p.id)}" value="${esc(p.base)}" placeholder="https://api.openai.com/v1"></div>
                 <div class="field"><label>模型名称</label><input data-bind="profile.model" data-id="${esc(p.id)}" value="${esc(p.model)}" placeholder="gpt-4o"></div>
@@ -1564,6 +1488,7 @@ document.addEventListener("click", async (e) => {
         state.projects.push(p);
         state.active = p.id;
         view = "home"; save(); render();
+        // 每次新建都尝试匹配外观
         scheduleTheme();
       }
       break;
