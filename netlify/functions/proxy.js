@@ -18,6 +18,7 @@ export async function handler(event) {
   return {
     statusCode: res.status,
     headers: {
+      "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "*",
       "Access-Control-Allow-Methods": "*"
